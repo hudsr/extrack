@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <!-- coloque isso dentro de `head` -->
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/icons/icon-192x192.png">
+
+    <!-- Splashscreens -->
+    <link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+    <!-- Add manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Tell the browser it's a PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Tell iOS it's a PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Make sure theme-color is defined -->
+    <meta name="theme-color" content="#323232">
+
+    <title>Extrack.</title>
+
+    <!-- Add in some basic styles for our HTML -->
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .App {
+        text-align: center;
+      }
+      .App-header {
+        background-color: #222;
+        height: 150px;
+        padding: 20px;
+        color: white;
+      }
+      .App-intro {
+        font-size: large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="App">
+        <div class="App-header">
+          <h2>Home</h2>
+        </div>
+        <p class="App-intro">
+          Loading site...
+        </p>
+    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker
+            .register('service-worker.js')
+            .then(
+              function(registration) {
+                // Registration was successful
+                // console.log(
+                //   'ServiceWorker registration successful with scope: ',
+                //   registration.scope
+                // )
+              },
+              function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err)
+              }
+            )
+            .catch(function(err) {
+              console.log(err)
+            })
+        })
+      } else {
+        console.log('service worker is not supported')
+      }
+    </script>
+  </body>
+</html>
